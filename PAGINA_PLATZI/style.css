@@ -1,0 +1,549 @@
+/*
+    Manera de como empezar a estilar la caja
+    1. Posicionamiento --> static, absolute, relative, fixed
+    2. Modelo de caja (Box model) --> margin, border, padding, content
+    3. Tipografía --> tipos, tamaños de fuente, etc
+    4. Estilos visuales --> box-shadow, border-radius, gradient, etc
+    5. Otros --> reglas CSS y más 
+*/
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* Colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --secundary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --warm-black-1: #282623;
+    --gray: #BABABA;
+    --off-white: #FAF8F7;
+    --white: #FFFFFF;
+}
+html{
+    font-size: 62.5%;
+    font-family: "DM Sans", sans-serif;
+}
+header{
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%); 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+}
+header img{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+}
+.header--title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+.header--title-container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--white);
+}
+.header--title-container p{
+    margin-top: 25px;
+    color: var(--soft-orange);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+.header--button{
+    position: absolute;
+    left: calc(50% - 118px);
+    top: 270px;
+    display: flex;
+    padding: 15px;
+    margin-top: 35px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    color: var(--warm-black-1);
+    box-shadow: 0px 4px 8px rgba(89,73,30,0.16);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black-1);
+}
+.header--button span{
+    position: relative;
+    bottom: 4px;
+    width: 26px;
+    height: 17px;
+    margin-left: 5px;
+    background-image: url('assets/icons/scroll_vertical.svg');
+}
+main{
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+}
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.main-exchange-container-title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.main-exchange-container .background-img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url(assets/imgs/bitcoin.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /*validar ejemplos*/
+}
+.main-exchange-container-title h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--warm-black-1);
+    line-height: 2.6rem;
+}
+.main-exchange-container-title p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+.table-container-slider{
+    display: flex;
+    height: 370px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.main-table-container{
+    scroll-snap-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+.main-currency-table{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 350px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+.main-currency-table .currency-table--title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+.currency-table--container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+.currency-table--container table{
+    height: 100%;
+    width: 100%;
+}
+.currency-table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500px;
+    line-height: 1.9rem;
+    color: var(--gray);
+    background-color: var(--white);
+}
+.currency-table--container .table__top-left{
+    border-radius: 15px 0 0 0;
+}
+.currency-table--container .table__top-right{
+    border-radius: 0 15px 0 0;
+}
+.currency-table--container .table__bottom-left{
+    border-radius: 0 0 0 15px;
+}
+.currency-table--container .table__bottom-right{
+    border-radius: 0 0 15px 0;
+}
+.arrow-decrease{
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    margin-left: 5px;
+    background-image: url(assets/icons/decrecimiento.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.arrow-rise{
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    margin-left: 5px;
+    background-image: url(assets/icons/crecimiento.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.currency-table-date{
+    width:190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    background-color: var(--soft-orange);
+    border-radius: 5px;
+    padding: 5px;
+}
+.currency-table-date p{
+    margin: 3px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--warm-black-1);
+}
+.main-comision-table{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 350px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+.main-comision-table .comision-table--title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secundary-blue);
+}
+.comision-table--container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+.comision-table--container table{
+    height: 100%;
+    width: 100%;
+}
+.comision-table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500px;
+    line-height: 1.9rem;
+    color: var(--gray);
+    background-color: var(--white);
+}
+.comision-table--container .table__top-left-2{
+    border-radius: 15px 0 0 0;
+}
+.comision-table--container .table__top-right-2{
+    border-radius: 0 15px 0 0;
+}
+.comision-table--container .table__bottom-left-2{
+    border-radius: 0 0 0 15px;
+}
+.comision-table--container .table__bottom-right-2{
+    border-radius: 0 0 15px 0;
+}
+.comision-table-date{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    background-color: var(--soft-blue);
+    border-radius: 5px;
+    padding: 5px;
+}
+.comision-table-date p{
+    margin: 3px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--warm-black-1);
+}
+.main-benefit-container{
+    position: relative;
+    background-color: var(--warm-black);
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+}
+.icon-potato{
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    top: -10px;
+    left: calc(50% - 20px);
+    background-image: url(assets/icons/Group\ 16.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.product-detail-title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+.product-detail-title h2{
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+}
+.product-detail-title p{
+    color: #808080;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+.detail-card{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 140px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    background-color: var(--warm-black-1);
+}
+.icon-card-1{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(../PAGINA_PLATZI/assets/icons/clock\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} 
+.icon-card-2{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(../PAGINA_PLATZI/assets/icons/ojo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.icon-card-3{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(../PAGINA_PLATZI/assets/icons/check-circle\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.icon-card-4{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(../PAGINA_PLATZI/assets/icons/dollar-sign\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.detail-card .card-title{
+    margin-bottom: 15px;
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+}
+.detail-card .card-description{
+    color: #808080;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+.container-imagen-bitcoin{
+    width: 100%;
+    min-width: 320px;
+    height: 70vh;
+    background-image: url(../PAGINA_PLATZI/assets/imgs/bitcoinbabyx2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+.container-imagen-bitcoin h2{
+    padding-top: 60px;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    font-weight: bold;
+    color: var(--white);
+}
+.main-plan-container{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    background-color: var(--off-white);
+    text-align: center;
+}
+.main-plan-container .plan-title{
+    width: 90%;
+    width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.plan-title h2{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+.plan-title p{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+.plans-container-slider{
+    display: flex;
+    height: 320px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.container-plan-card{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 10px 0;
+    padding: 0 15px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+.plan-card-title{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    top: -15px;
+    left: calc(50% - 60px);
+    padding: 6px;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: bold;
+    color: var(--white);
+    border-radius: 8px;
+    background-color: var(--bitcoin-orange);
+}
+.container-plan-card h3{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+.plan-price{
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 5.2rem;
+    line-height: 5.3rem;
+    color: black;
+}
+.plan-price span{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.plan-description{
+    font-size: 1.2rem;
+    color: #757575;
+}
+.container-plan-card .bottom-selection{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px ;
+    background-color: #FAF8F7;
+    border: 2px solid #F7931A;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #201E1C;
+}
+.bottom-selection span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../PAGINA_PLATZI/assets/icons/arrow-right\ 1.svg');
+    vertical-align: text-bottom;
+}
+.footer-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+.footer-container-link{
+    width: auto;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 50px;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;   
+    margin: 0 auto;
+}
+.footer-container-link a{
+    margin: 10px;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-decoration: none;
+}
+.footer-logo{position: absolute;
+    width: 64px;
+    height: 50px;
+    top: 50px;
+    right: 60px;
+    background-image: url(../PAGINA_PLATZI/assets/imgs/logo_pie.svg);
+}
